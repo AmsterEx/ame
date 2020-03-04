@@ -738,11 +738,11 @@ void BitcoinGUI::updateStakingIcon()
 	
 	uint64_t nNetworkWeight = GetPoSKernelPS();
     unsigned nEstimateTime = nTargetSpacing * nNetworkWeight / nWeight;
-	unsigned nPercent1 = nNetworkWeight / 100;
+/*	unsigned nPercent1 = nNetworkWeight / 100;
 	unsigned nPercent = nWeight / nPercent1;
 	if (nPercent > 100) {
 		nPercent = 100;
-	}
+	}*/
 
     if (pwalletMain && pwalletMain->IsLocked())
     {
@@ -795,8 +795,8 @@ void BitcoinGUI::updateStakingIcon()
 
         labelStakingIcon->setPixmap(QIcon(":/icons/staking_on").pixmap(32,32));
         labelStakingIcon->setEnabled(true);
-        labelStakingIcon->setToolTip(tr("You are minting AME: <b>Happy Staking!</b><br><br>Amsterex Network Weight: <b>%1</b><br><br>My Wallet Weight: <b>%2</b><br><br>My Network Weight Share: <b>%3%</b><br><br>Estimated Next Stake: <b>%4</b><br><br>MultiSend: <b>%5</b>").arg(nNetworkWeight).arg(nWeight).arg(nPercent).arg(text).arg(fMultiSend ? tr("Active"):tr("Inactive")));
-		//labelStakingIcon->setToolTip(tr("You are minting AME: <b>Happy Staking!</b><br><br>Amsterex Network Weight: <b>%1</b><br><br>My Wallet Weight: <b>%2</b><br><br>Estimated Next Stake: <b>%4</b><br><br>MultiSend: <b>%5</b>").arg(nNetworkWeight).arg(nWeight).arg(text).arg(fMultiSend ? tr("Active"):tr("Inactive")));
+        //labelStakingIcon->setToolTip(tr("You are minting AME: <b>Happy Staking!</b><br><br>Amsterex Network Weight: <b>%1</b><br><br>My Wallet Weight: <b>%2</b><br><br>My Network Weight Share: <b>%3%</b><br><br>Estimated Next Stake: <b>%4</b><br><br>MultiSend: <b>%5</b>").arg(nNetworkWeight).arg(nWeight).arg(nPercent).arg(text).arg(fMultiSend ? tr("Active"):tr("Inactive")));
+	labelStakingIcon->setToolTip(tr("You are minting AME: <b>Happy Staking!</b><br><br>Amsterex Network Weight: <b>%1</b><br><br>My Wallet Weight: <b>%2</b><br><br>Estimated Next Stake: <b>%4</b><br><br>MultiSend: <b>%5</b>").arg(nNetworkWeight).arg(nWeight).arg(text).arg(fMultiSend ? tr("Active"):tr("Inactive")));
     }
     else
     {
