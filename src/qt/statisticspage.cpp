@@ -162,7 +162,7 @@ void StatisticsPage::updatePlot()
     vX3.resize(numLookBack);
     vY3.resize(numLookBack);
 
-    CBlockIndex* itr3 = pindex;
+    const CBlockIndex* itr3 = pindex;
 
     while(i >= 0 && itr3 != NULL)
     {
